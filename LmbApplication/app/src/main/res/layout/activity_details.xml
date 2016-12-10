@@ -11,7 +11,7 @@
     tools:context="com.pj.lmb.lmbapplication.DetailsActivity">
 
     <TextView
-        android:text="TextView"
+        android:text="詳細画面"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

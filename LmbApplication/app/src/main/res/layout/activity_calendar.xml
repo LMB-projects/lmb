@@ -26,5 +26,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
         android:id="@+id/planBtn"
-        android:onClick="onPlanBtnTapped (CalendarActivity)" />
+        android:onClick="onPlanBtnTapped" />
 </RelativeLayout>
