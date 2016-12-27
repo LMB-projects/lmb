@@ -42,4 +42,12 @@
         android:layout_toRightOf="@+id/registerBtn"
         android:layout_toEndOf="@+id/registerBtn"
         android:onClick="onDetailsBtnTapped" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
