@@ -27,26 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="46dp"
-<<<<<<< HEAD
         android:id="@+id/register_button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="22dp"
-        android:id="@+id/name"
-        android:textSize="18sp"
-        android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
-=======
-        android:id="@+id/rejister_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
@@ -71,36 +52,21 @@
         android:layout_below="@+id/textView4"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4" />
->>>>>>> 98b645b5d714444e4e3ae72de6b01efd842aca84
 
     <TextView
         android:text="時間"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:id="@+id/textView6"
-        android:layout_below="@+id/date"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_marginTop="23dp" />
-=======
         android:layout_below="@+id/textView5"
         android:layout_alignLeft="@+id/textView5"
         android:layout_alignStart="@+id/textView5"
         android:layout_marginTop="32dp"
         android:id="@+id/textView6" />
->>>>>>> 98b645b5d714444e4e3ae72de6b01efd842aca84
 
     <TextView
         android:text="内容"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:id="@+id/textView7"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6" />
-=======
         android:layout_below="@+id/textView6"
         android:layout_marginTop="29dp"
         android:id="@+id/textView7"
@@ -108,28 +74,11 @@
         android:layout_alignStart="@+id/textView6"
         android:layout_alignRight="@+id/textView6"
         android:layout_alignEnd="@+id/textView6" />
->>>>>>> 98b645b5d714444e4e3ae72de6b01efd842aca84
 
     <TextView
         android:text="カテゴリー"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:id="@+id/textView8"
-        android:layout_above="@+id/category"
-        android:layout_alignLeft="@+id/textView7"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_marginBottom="23dp" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
-        android:id="@+id/category"
-        android:layout_above="@+id/register_button"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
-=======
         android:layout_below="@+id/textView7"
         android:layout_alignLeft="@+id/textView7"
         android:layout_alignStart="@+id/textView7"
@@ -140,7 +89,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:layout_below="@+id/textView"
         android:layout_toRightOf="@+id/textView8"
@@ -150,24 +98,16 @@
         android:layout_marginTop="22dp"
         android:id="@+id/name"
         android:textSize="18sp" />
->>>>>>> 98b645b5d714444e4e3ae72de6b01efd842aca84
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-<<<<<<< HEAD
-        android:id="@+id/date"
-        android:layout_alignTop="@+id/textView5"
-        android:layout_alignLeft="@+id/name"
-        android:layout_alignStart="@+id/name" />
-=======
         android:layout_alignTop="@+id/textView5"
         android:layout_alignLeft="@+id/name"
         android:layout_alignStart="@+id/name"
         android:id="@+id/date" />
->>>>>>> 98b645b5d714444e4e3ae72de6b01efd842aca84
 
     <EditText
         android:layout_width="wrap_content"
@@ -175,12 +115,7 @@
         android:inputType="time"
         android:ems="10"
         android:id="@+id/time"
-<<<<<<< HEAD
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignBottom="@+id/textView6"
-=======
         android:layout_below="@+id/textView6"
->>>>>>> 98b645b5d714444e4e3ae72de6b01efd842aca84
         android:layout_alignLeft="@+id/date"
         android:layout_alignStart="@+id/date" />
 
@@ -189,33 +124,6 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-<<<<<<< HEAD
-        android:id="@+id/contents"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/time"
-        android:layout_alignStart="@+id/time" />
-
-    <TextView
-        android:text="日付"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/name"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4" />
-
-    <TextView
-        android:text="タイトル"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:layout_alignTop="@+id/name"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
-=======
         android:layout_below="@+id/textView7"
         android:layout_alignLeft="@+id/time"
         android:layout_alignStart="@+id/time"
@@ -225,11 +133,10 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/rejister_button"
+        android:layout_above="@+id/register_button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="44dp"
         android:id="@+id/category" />
->>>>>>> 98b645b5d714444e4e3ae72de6b01efd842aca84
 
 </RelativeLayout>

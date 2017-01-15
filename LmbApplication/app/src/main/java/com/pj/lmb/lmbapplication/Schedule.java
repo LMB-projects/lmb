@@ -1,7 +1,5 @@
 package com.pj.lmb.lmbapplication;
 
-import java.sql.Time;
-import java.util.Date;
 
 import io.realm.RealmObject;
 
@@ -18,10 +16,10 @@ public class Schedule extends RealmObject{
     private String title;
 
     //日付
-    private Date date;
+    private String date;
 
     //時間
-    private Time time;
+    private String time;
 
     //内容
     private String contents;
@@ -29,52 +27,43 @@ public class Schedule extends RealmObject{
     //カテゴリーID
     private int categoryNumber;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId(int id) {
-        return id;
-    }
-
-    public  void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitle(String title) {
+    public String getTitle() {
         return title;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Date getDate(Date date) {
+    public String getDate() {
         return date;
     }
 
-    public void setTime(Time time) {
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public Time getTime(Time time) {
-        return time;
+    public String getContents() {
+        return contents;
     }
 
     public void setContents(String contents) {
         this.contents = contents;
     }
 
-    public String getContents(String contents) {
-        return contents;
+    public int getCategoryNumber() {
+        return categoryNumber;
     }
 
     public void setCategoryNumber(int categoryNumber) {
         this.categoryNumber = categoryNumber;
     }
-
-    public int getCategoryNumber(int categoryNumber) {
-        return categoryNumber;
     }
-
-}
