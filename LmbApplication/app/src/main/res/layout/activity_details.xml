@@ -10,12 +10,139 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pj.lmb.lmbapplication.DetailsActivity">
 
+    <Button
+        android:text="変更"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="43dp"
+        android:id="@+id/change" />
+
+    <Button
+        android:text="削除"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/change"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:id="@+id/delete"
+        android:onClick="onDeleteClickButton" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/change"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        android:id="@+id/category" />
+
     <TextView
         android:text="詳細画面"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textView3"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        android:id="@+id/textView3" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="時間"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rabel_time"
+        android:layout_alignBaseline="@+id/time"
+        android:layout_alignBottom="@+id/time"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp" />
+
+    <TextView
+        android:text="日付"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rabel_date"
+        android:layout_alignBaseline="@+id/date"
+        android:layout_alignBottom="@+id/date"
+        android:layout_alignLeft="@+id/rabel_time"
+        android:layout_alignStart="@+id/rabel_time" />
+
+    <TextView
+        android:text="内容"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rabel_contents"
+        android:layout_alignBaseline="@+id/contents"
+        android:layout_alignBottom="@+id/contents"
+        android:layout_alignLeft="@+id/rabel_time"
+        android:layout_alignStart="@+id/rabel_time" />
+
+    <TextView
+        android:text="スタンプ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rabel_sticker"
+        android:layout_above="@+id/category"
+        android:layout_alignLeft="@+id/rabel_contents"
+        android:layout_alignStart="@+id/rabel_contents"
+        android:layout_marginBottom="17dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/contents"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/time"
+        android:layout_alignStart="@+id/time" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/time"
+        android:layout_above="@+id/contents"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="28dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/date"
+        android:layout_above="@+id/time"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="28dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/title"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:text="タイトル"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rabel_title"
+        android:layout_alignBaseline="@+id/title"
+        android:layout_alignBottom="@+id/title"
+        android:layout_alignRight="@+id/rabel_sticker"
+        android:layout_alignEnd="@+id/rabel_sticker" />
+
 </RelativeLayout>
