@@ -1,5 +1,7 @@
 package com.pj.lmb.lmbapplication;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,20 +14,22 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Button register = (Button)findViewById(R.id.register_button);
-        register.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                String message = "登録しました。";
-                Toast toast = Toast.makeText(RegisterActivity.this, message, Toast.LENGTH_LONG);
-                toast.show();
-            }
-        });
-
     }
 
-//   public void onRegisterBtnClick(Button button){
-//        Intent intent = new Intent(RegisterActivity.this){
+   public void onRegisterBtnClick(View view){
+        // 確認ダイアログの作成
+       AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
+       alertDlg.setTitle("スケジュールの登録");
+       alertDlg.setMessage("登録しました。");
+       alertDlg.setPositiveButton(
+               "OK",
+               new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int which) {
+                       // OK ボタンクリック処理
+                   }
+               });
 
-//        }
-//    }
+       // 表示
+       alertDlg.create().show();
+    }
 }

@@ -22,15 +22,6 @@
         android:layout_marginTop="35dp"
         android:id="@+id/textView" />
 
-    <Button
-        android:text="登録"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="46dp"
-        android:id="@+id/register_button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:text="タイトル"
         android:layout_width="wrap_content"
@@ -138,5 +129,25 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="44dp"
         android:id="@+id/category" />
+
+    <Button
+        android:text="登録"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="41dp"
+        android:id="@+id/register_button"
+        android:onClick="onRegisterBtnClick (RegisterActivity)"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/contents"
+        android:layout_alignEnd="@+id/contents" />
+
+    <Button
+        android:text="戻る"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+        android:id="@+id/return_button" />
 
 </RelativeLayout>
