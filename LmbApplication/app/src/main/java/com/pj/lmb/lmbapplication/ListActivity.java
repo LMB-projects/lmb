@@ -30,7 +30,7 @@ public class ListActivity extends AppCompatActivity {
 
         // ArrayAdapterオブジェクトの生成
         // simple_list_item_1は、もともと用意されているレイアウトファイルのID
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<java.lang.String>(this, android.R.layout.simple_expandable_list_item_1, list);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, list);
 
         // Adapterの指定
         listView.setAdapter(arrayAdapter);
