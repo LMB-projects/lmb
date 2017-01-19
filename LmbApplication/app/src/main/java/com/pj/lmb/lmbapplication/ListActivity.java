@@ -10,6 +10,10 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
+
 public class ListActivity extends AppCompatActivity {
 
     ListView listView;
@@ -26,6 +30,14 @@ public class ListActivity extends AppCompatActivity {
         list.add("デート");
 
         listView = (ListView) findViewById(R.id.listView);
+
+        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().build();
+
+        Realm realm = Realm.getInstance(realmConfiguration);
+        RealmResults<Schedule> results = realm.where(Schedule.class).findAll();
+
+        // for文でresultsの結果を件数分listに入れる
+
 
 
         // ArrayAdapterオブジェクトの生成

@@ -1,26 +1,23 @@
 package com.pj.lmb.lmbapplication;
 
+import android.content.Context;
 import android.icu.text.SimpleDateFormat;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import io.realm.RealmResults;
-import io.realm.internal.Context;
 
 /**
  * Created by sakiko.fukuda on 2017/01/18.
  */
 
-public class ScheduleAdapter extends  RealmBaseAdapter<Schedule> {
+public abstract class ScheduleAdapter extends BaseAdapter {
 
     private static class ViewHolder {
         TextView date;
         TextView title;
-    }
-
-    public ScheduleAdapter(Context context, RealmResults<Schedule> realmResults, boolean automaticUpdate) {
-        super(context, realmResults, automaticUpdate);
     }
 
     @Override
