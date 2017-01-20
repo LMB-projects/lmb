@@ -54,7 +54,7 @@
         android:text="時間"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rabel_time"
+        android:id="@+id/label_time"
         android:layout_alignBaseline="@+id/time"
         android:layout_alignBottom="@+id/time"
         android:layout_alignParentLeft="true"
@@ -66,30 +66,30 @@
         android:text="日付"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rabel_date"
+        android:id="@+id/label_date"
         android:layout_alignBaseline="@+id/date"
         android:layout_alignBottom="@+id/date"
-        android:layout_alignLeft="@+id/rabel_time"
-        android:layout_alignStart="@+id/rabel_time" />
+        android:layout_alignLeft="@+id/label_time"
+        android:layout_alignStart="@+id/label_time" />
 
     <TextView
         android:text="内容"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rabel_contents"
+        android:id="@+id/label_contents"
         android:layout_alignBaseline="@+id/contents"
         android:layout_alignBottom="@+id/contents"
-        android:layout_alignLeft="@+id/rabel_time"
-        android:layout_alignStart="@+id/rabel_time" />
+        android:layout_alignLeft="@+id/label_time"
+        android:layout_alignStart="@+id/label_time" />
 
     <TextView
         android:text="スタンプ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rabel_sticker"
+        android:id="@+id/label_category"
         android:layout_above="@+id/category"
-        android:layout_alignLeft="@+id/rabel_contents"
-        android:layout_alignStart="@+id/rabel_contents"
+        android:layout_alignLeft="@+id/label_contents"
+        android:layout_alignStart="@+id/label_contents"
         android:layout_marginBottom="17dp" />
 
     <EditText
@@ -139,10 +139,10 @@
         android:text="タイトル"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rabel_title"
+        android:id="@+id/label_title"
         android:layout_alignBaseline="@+id/title"
         android:layout_alignBottom="@+id/title"
-        android:layout_alignRight="@+id/rabel_sticker"
-        android:layout_alignEnd="@+id/rabel_sticker" />
+        android:layout_alignRight="@+id/label_category"
+        android:layout_alignEnd="@+id/label_category" />
 
 </RelativeLayout>
