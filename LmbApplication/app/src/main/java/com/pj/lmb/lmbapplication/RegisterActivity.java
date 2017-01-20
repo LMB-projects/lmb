@@ -36,8 +36,32 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
    public void onRegisterBtnClick(View view){
+       //DBに登録
        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().build();
        Realm realm = Realm.getInstance(realmConfiguration);
+
+       Number maxId = realm.where(Schedule.class).max("id");
+       int nextId = 1;
+       if(maxId == null) {
+           nextId = maxId.intValue() + 1;
+       } else {
+
+       }
+
+
+       Schedule scheduleData = realm.createObject(Schedule.class);
+
+       //IDのセット
+
+       scheduleData.setId(nextId);
+
+       //データのセット
+       scheduleData.setTitle(mTitleEdit.getText().toString());
+       scheduleData.setDate(mDataEdit.getText().toString());
+       scheduleData.setTime(mTimeEdit.getText().toString());
+       scheduleData.setContents(mMultilineEdit.getText().toString());
+       scheduleData.setCategoryNumber(mSpinnerEdit.getSelectedItemPosition());
+
        realm.beginTransaction();
 
         // 確認ダイアログの作成
