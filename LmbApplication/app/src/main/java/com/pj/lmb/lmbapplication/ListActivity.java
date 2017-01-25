@@ -17,7 +17,7 @@ import io.realm.RealmResults;
 public class ListActivity extends AppCompatActivity {
 
     ListView listView;
-    ArrayList<String> list = new ArrayList<>();
+    ArrayList<Schedule> list = new ArrayList<>();
 
 
     @Override
@@ -25,9 +25,6 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        list.add("買い物");
-        list.add("ジム");
-        list.add("デート");
 
         listView = (ListView) findViewById(R.id.listView);
 
@@ -37,12 +34,17 @@ public class ListActivity extends AppCompatActivity {
         RealmResults<Schedule> results = realm.where(Schedule.class).findAll();
 
         // for文でresultsの結果を件数分listに入れる
+        for(Schedule schedule : results) {
+            list.add(schedule);
+        }
+
+
 
 
 
         // ArrayAdapterオブジェクトの生成
         // simple_list_item_1は、もともと用意されているレイアウトファイルのID
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, list);
+        ArrayAdapter<Schedule> arrayAdapter = new ArrayAdapter<Schedule>(this, android.R.layout.simple_expandable_list_item_1, list);
 
         // Adapterの指定
         listView.setAdapter(arrayAdapter);
@@ -54,7 +56,10 @@ public class ListActivity extends AppCompatActivity {
     }
 
     public void onDetailsBtnTapped(View v){
+
+        // 詳細画面に遷移する時にIDを渡す
         Intent intent = new Intent(ListActivity.this,DetailsActivity.class);
+        intent.putExtra("ID", 1);
         startActivity(intent);
     }
 }
