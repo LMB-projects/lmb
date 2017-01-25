@@ -2,6 +2,7 @@ package com.pj.lmb.lmbapplication;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -36,33 +37,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
    public void onRegisterBtnClick(View view){
-       //DBに登録
-       RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().build();
-       Realm realm = Realm.getInstance(realmConfiguration);
-
-       Number maxId = realm.where(Schedule.class).max("id");
-       int nextId = 1;
-       if(maxId == null) {
-           nextId = maxId.intValue() + 1;
-       } else {
-
-       }
-
-
-       Schedule scheduleData = realm.createObject(Schedule.class);
-
-       //IDのセット
-
-       scheduleData.setId(nextId);
-
-       //データのセット
-       scheduleData.setTitle(mTitleEdit.getText().toString());
-       scheduleData.setDate(mDataEdit.getText().toString());
-       scheduleData.setTime(mTimeEdit.getText().toString());
-       scheduleData.setContents(mMultilineEdit.getText().toString());
-       scheduleData.setCategoryNumber(mSpinnerEdit.getSelectedItemPosition());
-
-       realm.beginTransaction();
 
         // 確認ダイアログの作成
        AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
@@ -73,10 +47,47 @@ public class RegisterActivity extends AppCompatActivity {
                new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int which) {
                        // OK ボタンクリック処理
+                       // DBに登録
+                       RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().build();
+                       Realm realm = Realm.getInstance(realmConfiguration);
+
+                       // トランザクション開始
+                       realm.beginTransaction();
+
+                       // IDの生成
+                       Number maxId = realm.where(Schedule.class).max("id");
+                       int nextId = 1;
+                       if(maxId != null) {
+                           nextId = maxId.intValue() + 1;
+                       }
+
+
+                       Schedule scheduleData = realm.createObject(Schedule.class);
+
+                       // IDのセット
+                       scheduleData.setId(nextId);
+
+                       //データのセット
+                       scheduleData.setTitle(mTitleEdit.getText().toString());
+                       scheduleData.setDate(mDataEdit.getText().toString());
+                       scheduleData.setTime(mTimeEdit.getText().toString());
+                       scheduleData.setContents(mMultilineEdit.getText().toString());
+                       scheduleData.setCategoryNumber(mSpinnerEdit.getSelectedItemPosition());
+
+                       // トランザクション終了
+                       realm.commitTransaction();
+
+                       // 一覧に戻る
+                       Intent intent = new Intent(RegisterActivity.this, ListActivity.class);
+                       startActivity(intent);
                    }
                });
 
        // 表示
        alertDlg.create().show();
+
+
+
+
     }
 }
