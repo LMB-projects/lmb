@@ -103,16 +103,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/time"
-        android:layout_below="@+id/textView6"
-        android:layout_alignLeft="@+id/date"
-        android:layout_alignStart="@+id/date" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:layout_below="@+id/textView7"
@@ -149,5 +139,15 @@
         android:layout_alignLeft="@+id/textView8"
         android:layout_alignStart="@+id/textView8"
         android:id="@+id/return_button" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/time"
+        android:layout_below="@+id/textView6"
+        android:layout_alignLeft="@+id/date"
+        android:layout_alignStart="@+id/date" />
 
 </RelativeLayout>
