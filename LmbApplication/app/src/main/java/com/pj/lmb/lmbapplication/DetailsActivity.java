@@ -2,6 +2,7 @@ package com.pj.lmb.lmbapplication;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,11 +21,18 @@ public class DetailsActivity extends AppCompatActivity {
     EditText mMultilineEdit;
     Spinner mSpinnerEdit;
 
+    //RealmConfigurationのクラスを作成
+    RealmConfiguration realmConfig = new RealmConfiguration.Builder().build();
+    //realmのインスタンスを生成
+    Realm realm = Realm.getInstance(realmConfig);
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
 
         mTitleEdit = (EditText) findViewById(R.id.title);
         mDateEdit = (EditText) findViewById(R.id.date);
@@ -32,6 +40,17 @@ public class DetailsActivity extends AppCompatActivity {
         mMultilineEdit = (EditText) findViewById(R.id.contents);
         mSpinnerEdit = (Spinner) findViewById(R.id.category);
 
+        //一覧画面を取得
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("ID",1);
+
+        RealmResults<Schedule> result = realm.where(Schedule.class).equalTo("id", id).findAll();
+
+        mTitleEdit.setText(result.get(0).getTitle());
+        mDateEdit.setText(result.get(0).getTitle());
+        mTimeEdit.setText(result.get(0).getTitle());
+        mMultilineEdit.setText(result.get(0).getTitle());
+        //mSpinnerEdit.setOnClickListener(result.get(0).getCategoryNumber());
 
     }
 
@@ -47,19 +66,13 @@ public class DetailsActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
-                        //RealmConfigurationのクラスを作成
-                        RealmConfiguration realmConfig = new RealmConfiguration.Builder().build();
-                        //realmのインスタンスを生成
-                        Realm realm = Realm.getInstance(realmConfig);
+
 
                         //トランザクション開始
                         realm.beginTransaction();
 
-                        //リスト画面から取得したidの情報を取得
-                        RealmResults<Schedule> result = realm.where(Schedule.class).equalTo("id", "1").findAll();
-
-                        //情報を削除
-                        result.remove(0);
+                        //リスト画面から取得したidの情報を取得し、削除
+                        realm.where(Schedule.class).equalTo("id", "1").findFirst().deleteFromRealm();
 
                         //コミット
                         realm.commitTransaction();
