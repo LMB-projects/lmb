@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
        if(maxId == null) {
            nextId = maxId.intValue() + 1;
        } else {
-
+            
        }
 
 
@@ -62,8 +62,6 @@ public class RegisterActivity extends AppCompatActivity {
        scheduleData.setContents(mMultilineEdit.getText().toString());
        scheduleData.setCategoryNumber(mSpinnerEdit.getSelectedItemPosition());
 
-       realm.beginTransaction();
-
         // 確認ダイアログの作成
        AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
        alertDlg.setTitle("スケジュールの登録");
@@ -78,5 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
 
        // 表示
        alertDlg.create().show();
+
+       realm.beginTransaction();
     }
 }
