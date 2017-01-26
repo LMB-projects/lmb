@@ -79,7 +79,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:ems="10"
         android:layout_below="@+id/textView"
         android:layout_toRightOf="@+id/textView8"
@@ -99,6 +99,16 @@
         android:layout_alignLeft="@+id/name"
         android:layout_alignStart="@+id/name"
         android:id="@+id/date" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/time"
+        android:layout_below="@+id/textView6"
+        android:layout_alignLeft="@+id/date"
+        android:layout_alignStart="@+id/date" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -126,10 +136,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="41dp"
         android:id="@+id/register_button"
-        android:onClick="onRegisterBtnClick (RegisterActivity)"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/contents"
-        android:layout_alignEnd="@+id/contents" />
+        android:layout_alignEnd="@+id/contents"
+        android:onClick="onRegisterBtnClick" />
 
     <Button
         android:text="戻る"
@@ -139,15 +149,5 @@
         android:layout_alignLeft="@+id/textView8"
         android:layout_alignStart="@+id/textView8"
         android:id="@+id/return_button" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/time"
-        android:layout_below="@+id/textView6"
-        android:layout_alignLeft="@+id/date"
-        android:layout_alignStart="@+id/date" />
 
 </RelativeLayout>

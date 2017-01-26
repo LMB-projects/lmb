@@ -1,23 +1,28 @@
 package com.pj.lmb.lmbapplication;
 
+
 import android.content.Context;
-import android.icu.text.SimpleDateFormat;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import io.realm.RealmBaseAdapter;
 import io.realm.RealmResults;
 
 /**
- * Created by sakiko.fukuda on 2017/01/18.
+ * Created by yoshizawa on 2017/01/26.
  */
 
-public abstract class ScheduleAdapter extends BaseAdapter {
+public class ScheduleAdapter extends RealmBaseAdapter<Schedule> implements ListAdapter {
 
     private static class ViewHolder {
-        TextView date;
         TextView title;
+        TextView date;
+    }
+
+    public ScheduleAdapter(Context context, RealmResults<Schedule> realmResults) {
+        super(context, realmResults);
     }
 
     @Override
@@ -33,10 +38,8 @@ public abstract class ScheduleAdapter extends BaseAdapter {
             viewHolder = (ViewHolder)convertView.getTag();
         }
 
-        Schedule schedule = realmResults.get(position);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        String formatDate = sdf.format(schedule.getDate());
-        viewHolder.date.setText(formatDate);
+        Schedule schedule = getItem(position);
+        viewHolder.date.setText(schedule.getDate());
         viewHolder.title.setText(schedule.getTitle());
 
         return convertView;

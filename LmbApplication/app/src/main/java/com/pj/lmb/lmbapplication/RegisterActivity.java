@@ -6,15 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
-import io.realm.RealmObject;
-import io.realm.RealmResults;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -29,14 +25,24 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // アイテムを追加します
+        adapter.add("LOVE");
+        adapter.add("EVENT");
+        adapter.add("WORK");
         mTitleEdit = (EditText) findViewById(R.id.name);
         mDataEdit = (EditText) findViewById(R.id.date);
         mTimeEdit = (EditText) findViewById(R.id.time);
         mMultilineEdit = (EditText) findViewById(R.id.contents);
         mSpinnerEdit = (Spinner) findViewById(R.id.category);
+        mSpinnerEdit.setAdapter(adapter);
     }
 
    public void onRegisterBtnClick(View view){
+
+       // Realm開始
+       Realm.init(this);
 
         // 確認ダイアログの作成
        AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
@@ -48,8 +54,9 @@ public class RegisterActivity extends AppCompatActivity {
                    public void onClick(DialogInterface dialog, int which) {
                        // OK ボタンクリック処理
                        // DBに登録
-                       RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().build();
-                       Realm realm = Realm.getInstance(realmConfiguration);
+
+                       // realmのインスタンスを生成
+                       Realm realm = Realm.getDefaultInstance();
 
                        // トランザクション開始
                        realm.beginTransaction();
@@ -61,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                            nextId = maxId.intValue() + 1;
                        }
 
-
+                       // 更新用RealmObject作成
                        Schedule scheduleData = realm.createObject(Schedule.class);
 
                        // IDのセット
